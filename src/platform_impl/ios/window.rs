@@ -433,6 +433,8 @@ impl Inner {
   pub fn theme(&self) -> Theme {
     Theme::Light
   }
+
+  pub fn set_theme(&self, _theme: Theme) {}
 }
 
 pub struct Window {

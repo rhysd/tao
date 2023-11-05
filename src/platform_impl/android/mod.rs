@@ -757,6 +757,8 @@ impl Window {
   pub fn theme(&self) -> Theme {
     Theme::Light
   }
+
+  pub fn set_theme(&self, _theme: Theme) {}
 }
 
 #[derive(Default, Clone, Debug)]

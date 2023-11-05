@@ -1109,7 +1109,7 @@ impl Window {
   /// ## Platform-specific
   ///
   /// - **macOS:** This is an app-wide setting.
-  /// - **Others:** Unsupported.
+  /// - **Linux / iOS / Android:** Unsupported.
   #[inline]
   pub fn set_theme(&self, theme: Theme) {
     self.window.set_theme(theme);

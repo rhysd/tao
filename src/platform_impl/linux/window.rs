@@ -869,6 +869,8 @@ impl Window {
 
     Theme::Light
   }
+
+  pub fn set_theme(&self, _theme: Theme) {}
 }
 
 // We need GtkWindow to initialize WebView, so we have to keep it in the field.
