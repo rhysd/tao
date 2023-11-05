@@ -1104,6 +1104,17 @@ impl Window {
     self.window.theme()
   }
 
+  /// Sets the current window theme.
+  ///
+  /// ## Platform-specific
+  ///
+  /// - **macOS:** This is an app-wide setting.
+  /// - **Others:** Unsupported.
+  #[inline]
+  pub fn set_theme(&self, theme: Theme) {
+    self.window.set_theme(theme);
+  }
+
   /// Prevents the window contents from being captured by other apps.
   ///
   /// ## Platform-specific

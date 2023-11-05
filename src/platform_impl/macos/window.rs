@@ -1422,6 +1422,12 @@ impl UnownedWindow {
     state.current_theme
   }
 
+  #[inline]
+  pub fn set_theme(&self, theme: Theme) {
+    set_ns_theme(theme);
+    self.shared_state.lock().unwrap().current_theme = theme;
+  }
+
   pub fn set_content_protection(&self, enabled: bool) {
     unsafe {
       let _: () = msg_send![*self.ns_window, setSharingType: !enabled as i32];
