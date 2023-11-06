@@ -887,6 +887,16 @@ impl Window {
   }
 
   #[inline]
+  pub fn set_theme(&self, theme: Theme) {
+    let current_theme = self.window_state.lock().current_theme;
+    if current_theme == theme {
+      return;
+    }
+    let theme = try_window_theme(self.window.0, Some(theme));
+    self.window_state.lock().current_theme = theme;
+  }
+
+  #[inline]
   pub fn reset_dead_keys(&self) {
     // `ToUnicode` consumes the dead-key by default, so we are constructing a fake (but valid)
     // key input which we can call `ToUnicode` with.
